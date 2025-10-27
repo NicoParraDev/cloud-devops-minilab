@@ -35,10 +35,9 @@ Este proyecto **NO es una aplicación de producción** - es una **demostración 
 
 ## 🏗️ Arquitectura del Proyecto
 
-```
 ![CLOUD DEVOPS MINILAB](https://github.com/user-attachments/assets/5e3f0cd6-7a22-4c5e-9721-b9ae20e12e0d)
 
-```
+
 
 ---
 
