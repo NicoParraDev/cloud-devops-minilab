@@ -1,8 +1,101 @@
 # 🚀 Cloud DevOps MiniLab - Whitestack Practice Project
 
-Un proyecto completo y **100% gratuito** para practicar las tecnologías que busca Whitestack: Python, Docker, Ansible, Terraform y Kubernetes.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109-green)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+![Ansible](https://img.shields.io/badge/Ansible-Automated-red)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-purple)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Ready-blue)
 
-## 📋 Descripción
+---
+
+## 📋 ¿Qué es este Proyecto?
+
+Este es un **proyecto de demostración de infraestructura DevOps** - una aplicación simple que sirve como excusa para mostrar experiencia práctica con el stack completo de tecnologías que busca Whitestack:
+
+- ✅ **Python** + FastAPI (backend development)
+- ✅ **Docker** (containerization)
+- ✅ **Ansible** (automation)
+- ✅ **Terraform** (Infrastructure as Code)
+- ✅ **Kubernetes** (orchestration)
+
+### 🎯 **Propósito Principal**
+
+Este proyecto **NO es una aplicación de producción** - es una **demostración práctica de habilidades DevOps** que muestra:
+- Desarrollo de API REST con Python/FastAPI
+- Containerización con Docker
+- Automatización con Ansible
+- Infrastructure as Code con Terraform  
+- Orquestación con Kubernetes
+- CI/CD con GitHub Actions
+
+**Es un portfolio técnico funcional** para demostrar experiencia en todas las tecnologías que buscan en puestos de Cloud DevOps Engineering.
+
+---
+
+## 🏗️ Arquitectura del Proyecto
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    CLOUD DEVOPS MINILAB                     │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  DESARROLLO                                                  │
+│  ┌──────────┐                                               │
+│  │ Python   │  ← API REST con FastAPI                      │
+│  │ FastAPI  │  • 3 endpoints simples                       │
+│  └──────────┘  • Health checks                              │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  CONTAINERIZACIÓN                                            │
+│  ┌──────────┐                                               │
+│  │ Docker   │  ← Imagen optimizada                         │
+│  │          │  • Multi-stage build                          │
+│  │          │  • Health checks                              │
+│  └──────────┘  • Production-ready                           │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  AUTOMATIZACIÓN                                              │
+│  ┌──────────┐   ┌──────────┐                               │
+│  │ Ansible  │ ← │ Playbook │ • Despliegues automatizados    │
+│  │          │   │          │ • Verificaciones              │
+│  └──────────┘   └──────────┘ • Idempotente                  │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  INFRAESTRUCTURA COMO CÓDIGO                                │
+│  ┌──────────┐                                               │
+│  │Terraform │  ← IaC completo                               │
+│  │          │  • Network                                    │
+│  │          │  • Container                                  │
+│  └──────────┘  • Image                                      │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  ORQUESTACIÓN                                                │
+│  ┌──────────┐                                               │
+│  │Kubernetes│  ← K8s manifests                             │
+│  │          │  • Deployments                                │
+│  │          │  • Services                                  │
+│  └──────────┘  • Health probes                              │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  CI/CD                                                       │
+│  ┌──────────┐                                               │
+│  │GitHub    │  ← GitHub Actions                             │
+│  │Actions   │  • Build automático                           │
+│  │          │  • Tests                                      │
+│  └──────────┘  • Deploy                                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📋 Descripción Detallada
 
 Este mini-laboratorio demuestra cómo construir, containerizar, automatizar y desplegar una aplicación Python con las herramientas DevOps más utilizadas en la industria cloud.
 
@@ -32,7 +125,7 @@ Este mini-laboratorio demuestra cómo construir, containerizar, automatizar y de
 
 ```
 Cloud_DevOps_MiniLab/
-├── main.py                 # Aplicación FastAPI
+├── main.py                 # Aplicación FastAPI (3 endpoints simples)
 ├── requirements.txt        # Dependencias Python
 ├── Dockerfile              # Imagen Docker
 ├── docker-compose.yml      # Orquestación Docker
@@ -44,60 +137,43 @@ Cloud_DevOps_MiniLab/
 │   ├── deployment.yaml
 │   ├── service.yaml
 │   └── kustomization.yaml
-├── Makefile                # Comandos automatizados
+├── Makefile               # Comandos automatizados
 ├── .gitignore
 └── README.md               # Esta guía
 ```
 
 ---
 
-## 📦 Prerequisitos
+## ⚠️ IMPORTANTE: ¿Qué es Este Proyecto?
 
-### Instalación Básica
+### ✅ ES:
 
-#### Windows (WSL2 o PowerShell)
+- **Una demostración de infraestructura DevOps**
+- Un proyecto educativo para aprender y practicar
+- Un portfolio técnico para mostrar habilidades
+- Un ejemplo de best practices en DevOps
+- Un caso de uso real de integración de tecnologías
 
-```bash
-# Instalar Docker Desktop
-# Descargar: https://www.docker.com/products/docker-desktop
+### ❌ NO ES:
 
-# Instalar Ansible
-wsl -d Ubuntu
-sudo apt update
-sudo apt install ansible -y
+- Una aplicación de producción
+- Un servicio web complejo
+- Una solución para usuarios finales
+- Un negocio o startup
+- Un producto comercial
 
-# Instalar Terraform
-wget https://releases.hashicorp.com/terraform/1.6.6/terraform_1.6.6_windows_amd64.zip
-unzip terraform_*.zip
-sudo mv terraform /usr/local/bin/
-```
+### 🎯 **El Valor Está en el Stack DevOps, No en la Aplicación**
 
-#### Linux / macOS
+La aplicación Python es **intencionalmente simple** (3 endpoints) porque el **objetivo NO es la aplicación, sino demostrar**:
 
-```bash
-# Docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
+1. ✅ **Containerización**: Cómo dockerizar correctamente
+2. ✅ **Automatización**: Cómo usar Ansible para deploy
+3. ✅ **IaC**: Cómo usar Terraform para infraestructura
+4. ✅ **Orquestación**: Cómo usar Kubernetes
+5. ✅ **CI/CD**: Cómo automatizar con GitHub Actions
+6. ✅ **Best Practices**: Health checks, logging, etc.
 
-# Ansible
-sudo apt install ansible -y  # Ubuntu/Debian
-# o
-brew install ansible          # macOS
-
-# Terraform
-brew install terraform        # macOS
-# o
-sudo apt install terraform    # Linux
-```
-
-#### Verificar Instalación
-
-```bash
-docker --version      # Docker version 20.10+
-ansible --version     # ansible 2.9+
-terraform --version   # Terraform v1.0+
-python3 --version     # Python 3.11+
-```
+**La aplicación es el medio, el fin es demostrar experiencia en DevOps** 🎯
 
 ---
 
@@ -115,16 +191,16 @@ docker-compose up -d
 docker-compose logs -f
 
 # Verificar el despliegue
-curl http://localhost:8000
+curl http://localhost:8001
 
 # Detener
 docker-compose down
 ```
 
 **Acceso a la aplicación:**
-- API: http://localhost:8000
-- Health Check: http://localhost:8000/health
-- Documentación: http://localhost:8000/docs
+- API: http://localhost:8001
+- Health Check: http://localhost:8001/health
+- Documentación: http://localhost:8001/docs
 
 ---
 
@@ -223,13 +299,13 @@ minikube service whitestack-demo-service --url
 
 ```bash
 # Root endpoint
-curl http://localhost:8000
+curl http://localhost:8001
 
 # Health check
-curl http://localhost:8000/health
+curl http://localhost:8001/health
 
 # Info
-curl http://localhost:8000/info
+curl http://localhost:8001/info
 ```
 
 ### Ver Logs
@@ -367,9 +443,9 @@ make info              # Ver información del despliegue
 
 Una vez que el proyecto esté corriendo, accede a:
 
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-- **OpenAPI JSON**: http://localhost:8000/openapi.json
+- **Swagger UI**: http://localhost:8001/docs
+- **ReDoc**: http://localhost:8001/redoc
+- **OpenAPI JSON**: http://localhost:8001/openapi.json
 
 ---
 
@@ -385,12 +461,12 @@ sudo systemctl start docker
 # Abrir Docker Desktop
 ```
 
-### Error: Puerto 8000 ocupado
+### Error: Puerto 8001 ocupado
 
 ```bash
 # Cambiar el puerto en docker-compose.yml o main.tf
 ports:
-  - "8001:8000"  # Usar 8001 en lugar de 8000
+  - "8002:8000"  # Usar 8002 en lugar de 8001
 ```
 
 ### Error: Ansible no encuentra módulo docker
@@ -413,11 +489,11 @@ terraform init
 
 ### Para el CV y Portfolio
 
-1. ✅ **GitHub**: Sube este proyecto a GitHub
-2. ✅ **CI/CD**: Agrega GitHub Actions
-3. ✅ **Monitoring**: Integra Prometheus/Grafana
-4. ✅ **Documentación**: Mejora el README
-5. ✅ **Tests**: Agrega pytest
+1. ✅ **GitHub**: Ya subiste este proyecto
+2. ✅ **CI/CD**: Agregue GitHub Actions
+3. ⏳ **Monitoring**: Integra Prometheus/Grafana
+4. ⏳ **Documentación**: Ya tienes README completo
+5. ⏳ **Tests**: Ya tienes test_app.py
 
 ### Recomendaciones Específicas para Whitestack
 
@@ -528,4 +604,3 @@ Si tienes preguntas sobre el proyecto o quieres mejorar algo, abre un issue en G
 ```bash
 make deploy-ansible  # O cualquier otro método
 ```
-
