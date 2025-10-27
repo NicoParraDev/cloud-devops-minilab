@@ -36,7 +36,7 @@ Este proyecto **NO es una aplicación de producción** - es una **demostración 
 ## 🏗️ Arquitectura del Proyecto
 
 ```
-<img width="1221" height="282" alt="CLOUD DEVOPS MINILAB drawio" src="https://github.com/user-attachments/assets/dfa467e8-487f-4a4c-b799-5d6272cd1197" />
+![CLOUD DEVOPS MINILAB](https://github.com/user-attachments/assets/5e3f0cd6-7a22-4c5e-9721-b9ae20e12e0d)
 
 ```
 
