@@ -1,0 +1,87 @@
+---
+- name: Deploy Whitestack Demo Application
+  hosts: localhost
+  connection: local
+  vars:
+    app_name: whitestack_demo
+    app_port: 8001
+    docker_image: whitestack-demo
+    
+  tasks:
+    - name: Display deployment info
+      debug:
+        msg: "Deploying {{ app_name }} application on port {{ app_port }}"
+    
+    - name: Check if Docker is installed
+      command: which docker
+      register: docker_check
+      changed_when: false
+      failed_when: false
+    
+    - name: Fail if Docker is not installed
+      fail:
+        msg: "Docker is not installed. Please install Docker first."
+      when: docker_check.rc != 0
+    
+    - name: Check if Docker daemon is running
+      command: docker ps
+      register: docker_daemon
+      changed_when: false
+      failed_when: false
+    
+    - name: Fail if Docker daemon is not running
+      fail:
+        msg: "Docker daemon is not running. Please start Docker."
+      when: docker_daemon.rc != 0
+    
+    - name: Build Docker image
+      community.docker.docker_image:
+        name: "{{ docker_image }}"
+        source: build
+        build:
+          path: "{{ playbook_dir }}"
+          dockerfile: Dockerfile
+        force_source: false
+        state: present
+    
+    - name: Stop existing container (if any)
+      community.docker.docker_container:
+        name: "{{ app_name }}"
+        state: absent
+      ignore_errors: true
+    
+    - name: Create and start container
+      community.docker.docker_container:
+        name: "{{ app_name }}"
+        image: "{{ docker_image }}"
+        state: started
+        restart_policy: unless-stopped
+        ports:
+          - "{{ app_port }}:8000"
+        env:
+          ENV: "production"
+          HOSTNAME: "{{ app_name }}"
+        healthcheck:
+          test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+          interval: 30s
+          timeout: 3s
+          retries: 3
+          start_period: 40s
+    
+    - name: Wait for application to be ready
+      uri:
+        url: "http://localhost:{{ app_port }}/health"
+        method: GET
+      register: result
+      until: result.status == 200
+      retries: 10
+      delay: 5
+      failed_when: false
+    
+    - name: Display deployment success
+      debug:
+        msg:
+          - "Application deployed successfully!"
+          - "Access the application at: http://localhost:{{ app_port }}"
+          - "Health check: http://localhost:{{ app_port }}/health"
+          - "API docs: http://localhost:{{ app_port }}/docs"

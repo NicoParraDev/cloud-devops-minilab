@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  whitestack-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: whitestack-demo:latest
+    container_name: whitestack_demo
+    ports:
+      - "8001:8000"
+    environment:
+      - ENV=production
+      - HOSTNAME=whitestack-demo
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    networks:
+      - demo-network
+
+networks:
+  demo-network:
+    driver: bridge
+

@@ -1,0 +1,39 @@
+========================================================================
+    CONFIGURACIÓN PARA CREAR EL REPOSITORIO EN GITHUB
+========================================================================
+
+1. INFORMACIÓN DEL REPOSITORIO
+--------------------------------
+✅ Repository name: cloud-devops-minilab
+✅ Description: Cloud DevOps MiniLab - Python, Docker, Ansible, Terraform, Kubernetes practice project for Whitestack
+
+2. VISIBILITY
+--------------------------------
+✅ Público (Para que puedan verlo en tu CV)
+
+3. CONFIGURACIÓN (IMPORTANTE - DEJA TODO EN OFF)
+--------------------------------
+❌ Add a README file: OFF (ya lo tienes)
+❌ Add .gitignore: OFF (ya lo tienes)
+❌ Choose a license: MIT License (opcional pero recomendado)
+
+4. DESPUÉS DE CREAR EL REPO
+--------------------------------
+Ejecuta estos comandos en tu terminal (PowerShell):
+
+git remote add origin https://github.com/TU_USERNAME/cloud-devops-minilab.git
+git branch -M main
+git push -u origin main
+
+========================================================================
+                            ¡ÉXITO! 🎉
+========================================================================
+
+Tips finales:
+- Agrega badges al README para que se vea profesional
+- Toma screenshots de la aplicación funcionando
+- Actualiza tu LinkedIn con el proyecto
+- Menciona el proyecto cuando postules a Whitestack
+
+========================================================================
+
